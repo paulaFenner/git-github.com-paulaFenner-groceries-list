@@ -1,0 +1,26 @@
+li {
+  list-style: none;
+}
+
+.shopping-list-item {
+  /* Base styles */
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.shopping-list-item.bought {
+  /* Bought state styles */
+  text-decoration: line-through;
+  color: #999;
+}
+
+.shopping-list-item .delete-button {
+  /* Delete button styles */
+  color: red;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.shopping-list-item .delete-button:hover {
+  opacity: 1;
+}

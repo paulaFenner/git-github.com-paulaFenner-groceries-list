@@ -1,0 +1,12 @@
+@import url(./styles/shoppingList.css);
+
+:root {
+  --main-color: #3f5b46;
+  --accent-color: #f98858;
+  --grey-color: #f3f5f5;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
