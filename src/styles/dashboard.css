@@ -35,6 +35,6 @@
 }
 
 .store-card.active {
-  border: 0.1875rem solid #2d6a4f;
-  background: #f0fdf4;
+  background: var(--light-main-color);
+  box-shadow: 0 4px 12px rgba(45, 106, 79, 0.15);
 }

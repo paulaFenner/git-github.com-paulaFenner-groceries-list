@@ -1,4 +1,4 @@
-function Dashboard({ stores, items, onSelectedStore }) {
+function Dashboard({ stores, items, onSelectedStore, selectedStore }) {
   const storeData = stores.map((store) => {
     const count = items.filter((item) => item.store === store).length;
     return { name: store, count: count };
@@ -12,7 +12,7 @@ function Dashboard({ stores, items, onSelectedStore }) {
         {storeData.map((store) => (
           <div
             key={store.name}
-            className='store-card'
+            className={`store-card ${store.name === selectedStore ? 'active' : ''}`}
             onClick={() => {
               onSelectedStore(store.name);
             }}>

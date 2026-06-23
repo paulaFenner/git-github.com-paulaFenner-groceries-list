@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-// import StoreSelector from './components/StoreSelector';
+
 import ShoppingList from './components/ShoppingList';
 import AddItemForm from './components/AddItemForm';
 import Dashboard from './components/Dashboard';
@@ -68,13 +68,9 @@ function App() {
         stores={stores}
         items={items}
         onSelectedStore={setSelectedStore}
+        selectedStore={selectedStore}
       />
 
-      {/* <StoreSelector
-        stores={stores}
-        value={selectedStore}
-        onChange={setSelectedStore}
-      /> */}
       <ShoppingList
         items={items}
         selectedStore={selectedStore}
