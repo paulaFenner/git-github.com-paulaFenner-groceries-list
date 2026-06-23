@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import StoreSelector from './components/StoreSelector';
 import ShoppingList from './components/ShoppingList';
 import AddItemForm from './components/AddItemForm';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const stores = ['Lidl', 'Continente', 'Pingo Doce', 'Mercado', 'Others'];
@@ -62,6 +63,9 @@ function App() {
   return (
     <>
       <AddItemForm stores={stores} onAddItem={addItem} />
+
+      <Dashboard stores={stores} items={items} />
+
       <StoreSelector
         stores={stores}
         value={selectedStore}

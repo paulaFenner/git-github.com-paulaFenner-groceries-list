@@ -1,4 +1,5 @@
 @import url(./styles/shoppingList.css);
+@import url(./styles/dashboard.css);
 
 :root {
   --main-color: #3f5b46;
