@@ -9,6 +9,14 @@ function ShoppingList({ items, selectedStore, onToggleBought, onDeleteItem }) {
     );
     return category ? category.emoji : '❗';
   }
+  if (filteredItems.length === 0) {
+    return (
+      <div className='empty-state'>
+        🛒 No items in this store yet. <br />
+        Tap the + button to add some!
+      </div>
+    );
+  }
 
   return (
     <ul>
@@ -16,13 +24,15 @@ function ShoppingList({ items, selectedStore, onToggleBought, onDeleteItem }) {
         <li
           key={item.id}
           className={`shopping-list-item ${item.bought ? 'bought' : ''}`}>
-          {getCategoryEmoji(item.category)}
+          <span className='item-emoji'>{getCategoryEmoji(item.category)}</span>
+          <span className='item-name'>{item.name}</span>
+          <span className='item-quantity'>{item.quantity}</span>
           <input
+            className='item-checkbox'
             type='checkbox'
             checked={item.bought}
             onChange={() => onToggleBought(item.id)}
           />
-          {item.name} ({item.quantity})
           <button
             className='delete-button'
             onClick={() => {
