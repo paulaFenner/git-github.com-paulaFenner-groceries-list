@@ -11,9 +11,12 @@ function ShoppingList({ items, selectedStore, onToggleBought, onDeleteItem }) {
   }
   if (filteredItems.length === 0) {
     return (
-      <div className='empty-state'>
-        🛒 No items in this store yet. <br />
-        Tap the + button to add some!
+      <div className='empty-list'>
+        <span className='empty-list-icon'>📝</span>
+        <p className='empty-list-title'>Your shopping list is empty</p>
+        <p className='empty-list-description'>
+          Start by adding your first item!
+        </p>
       </div>
     );
   }

@@ -53,7 +53,6 @@ li {
   flex-shrink: 0;
 }
 
-/* 8. Delete button - hidden by default */
 .shopping-list-item .delete-button {
   background: none;
   border: none;
@@ -68,17 +67,14 @@ li {
   flex-shrink: 0;
 }
 
-/* 9. Delete button - appears on hover */
 .shopping-list-item:hover .delete-button {
   opacity: 1;
 }
 
-/* 10. Delete button - red on hover */
 .shopping-list-item .delete-button:hover {
   color: #e63946;
 }
 
-/* 11. Bought state */
 .shopping-list-item.bought .item-name {
   text-decoration: line-through;
 }
@@ -89,4 +85,57 @@ li {
 
 .shopping-list-item.bought .item-emoji {
   opacity: 0.5;
+}
+
+/* ========================================
+   EMPTY LIST STYLES
+   ======================================== */
+
+.empty-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: var(--grey-color);
+  border-radius: 0.75rem;
+  text-align: center;
+  min-height: 200px;
+  border: 2px dashed #dee2e6;
+  max-width: 400px;
+  margin: 3rem auto;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.empty-list:hover {
+  border-color: var(--main-color);
+}
+.empty-list-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.empty-list-button {
+  margin-top: 1.25rem;
+  padding: 0.6rem 1.5rem;
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.empty-list-button:hover {
+  background: #1b4332;
+  transform: translateY(-1px);
+}
+
+.empty-list-button:active {
+  transform: translateY(0);
 }
