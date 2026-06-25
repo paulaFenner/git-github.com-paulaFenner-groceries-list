@@ -1,17 +1,21 @@
 @import url(./styles/shoppingList.css);
 @import url(./styles/dashboard.css);
 @import url(./styles/modal.css);
+@import url(./styles/buttons.css);
+@import url(./styles/addItemForm.css);
 
 :root {
-  --main-color: #3f5b46;
+  --main-color: #34543c;
   --light-main-color: #79897d;
-  --accent-color: #f98858;
+  --accent-color: #f4713d;
   --grey-color: #f3f5f5;
+  --white-color: #fff;
+  --red-color: #e63946;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  padding: 0;
+  padding: 1em;
   margin: 0;
 }
