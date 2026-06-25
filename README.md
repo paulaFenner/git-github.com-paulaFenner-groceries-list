@@ -24,10 +24,17 @@ src/
 │   └── categoryData.js      # Category definitions (name + emoji)
 ├── components/
 │   ├── AddItemForm.jsx       # Form to add a new item
+│   ├── Button.jsx            # FAB to open the add-item modal
+│   ├── Dashboard.jsx         # Store cards grid with item counts
+│   ├── Modal.jsx             # Overlay dialog wrapper
 │   ├── ShoppingList.jsx      # Displays items filtered by store
-│   └── StoreSelector.jsx     # Dropdown to pick a store
+│   └── StoreSelector.jsx     # Unused — replaced by Dashboard cards
 ├── styles/
-│   └── shoppingList.css      # Styling (pending)
+│   ├── addItemForm.css
+│   ├── buttons.css
+│   ├── dashboard.css
+│   ├── modal.css
+│   └── shoppingList.css
 ├── App.jsx                   # Root component, state management, localStorage
 ├── index.css                 # Global styles entry point
 └── main.jsx                  # App entry point
@@ -39,17 +46,25 @@ src/
 
 Manages all state (`items`, `selectedStore`). Persists to `localStorage` via `useEffect`. Defines CRUD operations: `addItem`, `toggleBought`, `deleteItem`.
 
-### AddItemForm
+### Dashboard
 
-Controlled form with fields for product name, quantity (number), store (dropdown), and category (dropdown). Submits via `onAddItem` callback.
+Renders a grid of store cards with item counts. Clicking a card selects that store and highlights it.
 
 ### ShoppingList
 
-Receives `items` and `selectedStore`, filters items by store, and renders them as a list with a checkbox (bought status), category emoji, name, quantity, and delete button.
+Receives `items` and `selectedStore`, filters items by store, and renders them as a list with a checkbox (bought status), category emoji, name, quantity, and delete button. Shows an empty-state message when no items exist.
 
-### StoreSelector
+### Button
 
-Simple `<select>` that sets the active store filter.
+Floating action button (`+`) that toggles the add-item modal.
+
+### Modal
+
+Overlay dialog wrapper with a close button. Renders its `children` (typically `AddItemForm`).
+
+### AddItemForm
+
+Controlled form with fields for product name, quantity (number), store (dropdown), and category (dropdown). Submits via `onAddItem` callback.
 
 ## Data Model
 
@@ -78,15 +93,10 @@ Dairy, Meat, Produce, Bakery, Pantry, Beverages, Spices & Condiments, Frozen, Ho
 
 ### UX / Missing Functionality
 
-- **Empty state** — When a store has no items, the list is blank. Show a message like "No items for this store."
 - **`formStore` not reset on submit** — After adding an item, the store dropdown keeps its value while other fields reset. Likely an oversight.
 - **No min/validation on quantity** — The number input accepts 0 and negative values.
 - **No "All stores" view** — Items are always filtered by store; there's no way to see everything at once.
-
-### Accessibility
-
-- **Missing labels** — The store and category `<select>` elements in `AddItemForm` have no associated `<label>`.
-- **Missing label** — `StoreSelector` has a `<select>` with no `<label>`.
+- **Missing label** — The category `<select>` in `AddItemForm` has no associated `<label>`.
 
 ### Code Quality
 
