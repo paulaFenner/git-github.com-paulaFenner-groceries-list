@@ -3,7 +3,9 @@ function Modal({ onClose, children }) {
     <>
       <dialog className='modal-overlay'>
         <div className='modal-content' onClick={(e) => e.stopPropagation()}>
-          <button onClick={onClose}>X</button>
+          <button onClick={onClose} className='close-btn'>
+            X
+          </button>
           {children}
         </div>
       </dialog>

@@ -1,0 +1,60 @@
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.add-item-btn {
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  font-size: 3rem;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+}
+
+.small {
+  font-size: 1rem;
+  padding: 0.5em 1em;
+}
+
+/* ========================================
+   CLOSING BUTTONS
+   ======================================== */
+
+.close-btn {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  cursor: pointer;
+  color: var(--light-main-color);
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: var(--main-color);
+}
+
+/* ========================================
+   SHOPPING LIST BUTTONS
+   ======================================== */
+
+.shopping-list-item .delete-button {
+  color: var(--white-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+  opacity: 0; /* Hidden by default */
+  flex-shrink: 0;
+}
+
+.shopping-list-item:hover .delete-button {
+  opacity: 1;
+}
+
+.shopping-list-item .delete-button:hover {
+  color: var(--red-color);
+}

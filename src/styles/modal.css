@@ -15,7 +15,8 @@
 
 /* Modal Content */
 .modal-content {
-  background: white;
+  position: relative;
+  background: var(--white-color);
   border-radius: 1rem;
   padding: 2rem;
   max-width: 500px;
@@ -25,24 +26,6 @@
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: slideUp 0.3s ease;
-}
-
-/* Close Button */
-.modal-close {
-  position: absolute;
-  top: 0.75rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #6c757d;
-  transition: color 0.2s;
-  padding: 0.25rem 0.5rem;
-}
-
-.modal-close:hover {
-  color: #212529;
 }
 
 /* Animations */

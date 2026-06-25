@@ -53,28 +53,6 @@ li {
   flex-shrink: 0;
 }
 
-.shopping-list-item .delete-button {
-  background: none;
-  border: none;
-  color: #ddd;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0 0.25rem;
-  transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
-  opacity: 0; /* Hidden by default */
-  flex-shrink: 0;
-}
-
-.shopping-list-item:hover .delete-button {
-  opacity: 1;
-}
-
-.shopping-list-item .delete-button:hover {
-  color: #e63946;
-}
-
 .shopping-list-item.bought .item-name {
   text-decoration: line-through;
 }
@@ -116,7 +94,7 @@ li {
   margin-bottom: 0.75rem;
 }
 
-.empty-list-button {
+/* .empty-list-button {
   margin-top: 1.25rem;
   padding: 0.6rem 1.5rem;
   background: #2d6a4f;
@@ -138,4 +116,4 @@ li {
 
 .empty-list-button:active {
   transform: translateY(0);
-}
+} */

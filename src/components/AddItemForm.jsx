@@ -22,46 +22,61 @@ function AddItemForm({ stores, onAddItem }) {
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>Create your shopping list</legend>
+        <legend>✨ Add New Item</legend>
 
-        <label htmlFor='product'>Product name:</label>
-        <input
-          name='product'
-          type='text'
-          id='product'
-          placeholder='milk'
-          value={productName}
-          onChange={(e) => setProductName(e.target.value)}
-        />
+        <div className='form-group'>
+          <label htmlFor='product'>Product name:</label>
+          <input
+            name='product'
+            type='text'
+            id='product'
+            placeholder='milk'
+            value={productName}
+            onChange={(e) => setProductName(e.target.value)}
+          />
+        </div>
 
-        <label htmlFor='quantity'>Quantity:</label>
-        <input
-          name='quantity'
-          type='number'
-          id='quantity'
-          value={quantity}
-          onChange={(e) => setQuantity(Number(e.target.value))}
-        />
+        <div className='form-row'>
+          <div className='form-group'>
+            <label htmlFor='quantity'>Quantity:</label>
+            <input
+              name='quantity'
+              type='number'
+              id='quantity'
+              value={quantity}
+              onChange={(e) => setQuantity(Number(e.target.value))}
+            />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='store'>Store:</label>
+            <select
+              name='store'
+              value={formStore}
+              onChange={(e) => setFormStore(e.target.value)}>
+              {stores.map((store) => (
+                <option key={store} value={store}>
+                  {store}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-        <select
-          value={formStore}
-          onChange={(e) => setFormStore(e.target.value)}>
-          {stores.map((store) => (
-            <option key={store} value={store}>
-              {store}
-            </option>
-          ))}
-        </select>
+        <div className='form-group'>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}>
+            {categoryData.map((cat) => (
+              <option key={cat.categoryName} value={cat.categoryName}>
+                {cat.emoji} {cat.categoryName}
+              </option>
+            ))}
+          </select>
+        </div>
 
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          {categoryData.map((cat) => (
-            <option key={cat.categoryName} value={cat.categoryName}>
-              {cat.emoji} {cat.categoryName}
-            </option>
-          ))}
-        </select>
-
-        <button type='submit'>Add to list</button>
+        <button type='submit' className='add-item-btn small'>
+          + Add to list
+        </button>
       </fieldset>
     </form>
   );
