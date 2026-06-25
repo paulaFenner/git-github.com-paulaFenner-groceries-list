@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 import ShoppingList from './components/ShoppingList';
 import AddItemForm from './components/AddItemForm';
 import Dashboard from './components/Dashboard';
+import Button from './components/Button';
+import Modal from './components/Modal';
 
 function App() {
   const stores = ['Lidl', 'Continente', 'Pingo Doce', 'Mercado', 'Others'];
@@ -26,6 +28,8 @@ function App() {
     }
   });
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     const dataToSave = {
       items: items,
@@ -41,6 +45,10 @@ function App() {
       ),
     );
   }
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   function addItem(name, store, quantity, category) {
     setItems((prevItems) => [
@@ -62,21 +70,24 @@ function App() {
 
   return (
     <>
-      <AddItemForm stores={stores} onAddItem={addItem} />
-
       <Dashboard
         stores={stores}
         items={items}
         onSelectedStore={setSelectedStore}
         selectedStore={selectedStore}
       />
-
       <ShoppingList
         items={items}
         selectedStore={selectedStore}
         onToggleBought={toggleBought}
         onDeleteItem={deleteItem}
       />
+      <Button onAdd={toggleModal} />
+      {isModalOpen && (
+        <Modal onClose={toggleModal}>
+          <AddItemForm stores={stores} onAddItem={addItem} />
+        </Modal>
+      )}
     </>
   );
 }
