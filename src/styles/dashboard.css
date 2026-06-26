@@ -5,6 +5,12 @@
   padding: 1rem;
 }
 
+@media (max-width: 360px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .store-card {
   background: var(--main-color);
   border-radius: 0.75rem;

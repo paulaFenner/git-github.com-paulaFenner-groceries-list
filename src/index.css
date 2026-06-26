@@ -4,6 +4,10 @@
 @import url(./styles/buttons.css);
 @import url(./styles/addItemForm.css);
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --main-color: #34543c;
   --light-main-color: #79897d;
